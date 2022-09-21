@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+This line is added by Max
 	
 ## Technologies
 Technologies used for this project:
