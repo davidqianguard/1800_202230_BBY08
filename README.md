@@ -8,6 +8,7 @@
 This browser based web application to ...
 * Hi my name is David, my Chinese name is Yilong Li.
 
+This line is added by Max
 	
 ## Technologies
 Technologies used for this project:
