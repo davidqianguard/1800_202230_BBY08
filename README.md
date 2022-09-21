@@ -6,6 +6,8 @@
 
 ## General Info
 This browser based web application to ...
+* Hi my name is David, my Chinese name is Yilong Li.
+
 	
 ## Technologies
 Technologies used for this project:
