@@ -6,9 +6,14 @@
 
 ## General Info
 This browser based web application to ...
+<<<<<<< HEAD
 * Hi my name is David, my Chinese name is Yilong Li.
 
 This line is added by Max
+=======
+* Hi my name is Brian. I'm excited about this project because this will be my first project!
+* This line is added by Max
+>>>>>>> 9e8f134dd79f491e44c50b2c5d75b04f631ced3c
 	
 ## Technologies
 Technologies used for this project:
