@@ -1,0 +1,44 @@
+[33mcommit 0d2a4e5551a4fe505988a5f3dbcf9b9cbe7a3bf5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 292c0f7 9e8f134
+Author: Yilong Li <divadmiro@gmail.com>
+Date:   Wed Sep 21 09:12:03 2022 -0700
+
+    Added one line intro to README file for david
+
+[33mcommit 292c0f74fdcd753c10a0177e2975f45cc26d9f12[m
+Merge: 3b2fd1b 66bf70d
+Author: Yilong Li <divadmiro@gmail.com>
+Date:   Wed Sep 21 09:10:25 2022 -0700
+
+    Added one line intro to README file for david
+
+[33mcommit 9e8f134dd79f491e44c50b2c5d75b04f631ced3c[m
+Merge: 920f123 66bf70d
+Author: Brian Kwon <bkwon6@my.bcit.ca>
+Date:   Wed Sep 21 09:05:12 2022 -0700
+
+    resolved conflict by Brian
+
+[33mcommit 3b2fd1bdd306feb0e8959ba21ddbf24113c64487[m
+Author: Yilong Li <divadmiro@gmail.com>
+Date:   Wed Sep 21 09:00:01 2022 -0700
+
+    Added one line intro to README file to david
+
+[33mcommit 920f123de4cd278bc11ea96799d83c80dc2742fa[m
+Author: Brian Kwon <bkwon6@my.bcit.ca>
+Date:   Wed Sep 21 08:58:51 2022 -0700
+
+    Added one line intro to README file for Brian
+
+[33mcommit 66bf70d031de95ef3cdc3d22d5f3de767c0da9e2[m
+Author: Maximilliany <maxillian4@gmail.com>
+Date:   Wed Sep 21 08:57:29 2022 -0700
+
+    Added a line
+
+[33mcommit a70cb212ba0f1ff5c11112d75a341a1702e10d62[m
+Author: Yilong Li <113317012+davidqianguard@users.noreply.github.com>
+Date:   Wed Sep 21 08:43:41 2022 -0700
+
+    Initial commit
