@@ -7,7 +7,7 @@
 ## General Info
 This browser based web application to ...
 <<<<<<< HEAD
-Hi! My name is Jayden and I am really looking forward to be with Brian, Max, and David over this term. I am excited to create a fascinate web-based application with y team and I hope we can show our teamwork! Let's keep it up!code
+Hi! My name is Jayden and I am really looking forward to be with Brian, Max, and David over this term. I am excited to create a fascinate web-based application with y team and I hope we can show our teamwork! Let's keep it up!
 =======
 <<<<<<< HEAD
 * Hi my name is David, my Chinese name is Yilong Li.
