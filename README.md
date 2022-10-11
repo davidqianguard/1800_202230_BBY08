@@ -6,7 +6,6 @@
 
 ## General Info
 This browser based web application to ...
-
 * Hi! My name is Jayden and I am really looking forward to be with Brian, Max, and David over this term. I am excited to create a fascinate web-based application with my team and I hope we can show our teamwork! Let's keep it up!
 * Hi my name is David, my Chinese name is Yilong Li.
 * Hi my name is Brian. I'm excited about this project because this will be my first project!
