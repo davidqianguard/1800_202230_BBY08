@@ -1,0 +1,13 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+html,
+body {
+  height: 100%
+}
+
+/* .container {
+  position: fixed;
+  top: 50%;
+  left: 35%;
+  margin-top: -50px;
+  margin-left: -100px;
+} */
