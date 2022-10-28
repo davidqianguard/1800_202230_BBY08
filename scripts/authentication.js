@@ -1,6 +1,11 @@
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+var firebaseConfig = {
+  apiKey: "AIzaSyA-PiRtIz-5qjMMAZcyhQGWJaab3uNmuKg",
+  authDomain: "comp1800-bby08-15f5e.firebaseapp.com",
+}
+
 var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function(authResult, redirectUrl) {

@@ -3,3 +3,4 @@
 node_modules/
 .vscode/
 firebaseAPI_TEAM8.js
+authentication.js
