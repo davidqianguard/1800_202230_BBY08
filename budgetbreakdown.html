@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My BCIT Project BBY08</title>
+  <meta name="BBY08 template" content="BBY08 1800 App">
+
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+
+</head>
+
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
+
+  <!-- our own navbar goes here -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="images/acorn.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Acorn
+      </a>
+    </div>
+  </nav>
+
+  <!-- the body of your page goes here -->
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group me-2">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+      </div>
+      <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This week
+      </button>
+    </div>
+  </div>
+
+  <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+<!-- Somehow make it pull data -->
+  <h2>Section title</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Header</th>
+          <th scope="col">Header</th>
+          <th scope="col">Header</th>
+          <th scope="col">Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1,001</td>
+          <td>random</td>
+          <td>data</td>
+          <td>placeholder</td>
+          <td>text</td>
+        </tr>
+        <tr>
+          <td>1,002</td>
+          <td>placeholder</td>
+          <td>irrelevant</td>
+          <td>visual</td>
+          <td>layout</td>
+        </tr>
+        <tr>
+          <td>1,003</td>
+          <td>data</td>
+          <td>rich</td>
+          <td>dashboard</td>
+          <td>tabular</td>
+        </tr>
+        <tr>
+          <td>1,003</td>
+          <td>information</td>
+          <td>placeholder</td>
+          <td>illustrative</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,004</td>
+          <td>text</td>
+          <td>random</td>
+          <td>layout</td>
+          <td>dashboard</td>
+        </tr>
+        <tr>
+          <td>1,005</td>
+          <td>dashboard</td>
+          <td>irrelevant</td>
+          <td>text</td>
+          <td>placeholder</td>
+        </tr>
+        <tr>
+          <td>1,006</td>
+          <td>dashboard</td>
+          <td>illustrative</td>
+          <td>rich</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,007</td>
+          <td>placeholder</td>
+          <td>tabular</td>
+          <td>information</td>
+          <td>irrelevant</td>
+        </tr>
+        <tr>
+          <td>1,008</td>
+          <td>random</td>
+          <td>data</td>
+          <td>placeholder</td>
+          <td>text</td>
+        </tr>
+        <tr>
+          <td>1,009</td>
+          <td>placeholder</td>
+          <td>irrelevant</td>
+          <td>visual</td>
+          <td>layout</td>
+        </tr>
+        <tr>
+          <td>1,010</td>
+          <td>data</td>
+          <td>rich</td>
+          <td>dashboard</td>
+          <td>tabular</td>
+        </tr>
+        <tr>
+          <td>1,011</td>
+          <td>information</td>
+          <td>placeholder</td>
+          <td>illustrative</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,012</td>
+          <td>text</td>
+          <td>placeholder</td>
+          <td>layout</td>
+          <td>dashboard</td>
+        </tr>
+        <tr>
+          <td>1,013</td>
+          <td>dashboard</td>
+          <td>irrelevant</td>
+          <td>text</td>
+          <td>visual</td>
+        </tr>
+        <tr>
+          <td>1,014</td>
+          <td>dashboard</td>
+          <td>illustrative</td>
+          <td>rich</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,015</td>
+          <td>random</td>
+          <td>tabular</td>
+          <td>information</td>
+          <td>text</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- footer -->
+  <footer class="fixed-bottom">
+    <div class="text-center bg-dark p-3" style="color: white">
+      © 2022 Copyright: BBY08
+    </div>
+  </footer>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="./scripts/firebaseAPI_TEAM8.js"></script>
+  <!-- <script src="./scripts/skeleton.js"></script> -->
+  <script src="./scripts/main.js"></script>
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="scripts/dashboard.js"></script>
+
+</body>
+
+</html>
