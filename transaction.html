@@ -68,25 +68,36 @@
   </nav>
 
   <!-- the body of your page goes here -->
-  <img src="images/pie_chart.png" class="rounded mx-auto d-block">
-
-  <div class="text-center">
-    <div class="btn-group gap-5">
-      <button type="button" href="#" class="btn-dark btn-sm">Compare to Avg</button>
-      <a class="btn-dark btn-sm" href="transactions.html" role="button"><span class="material-symbols-outlined">add</span></a>
-      <!-- <button type="button" href="transactions.html" class="btn-dark btn-sm"><span class="material-symbols-outlined">add</span></button> -->
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
-  </div>
-
-  <div class="h-75 d-flex align-items-center justify-content-center">
-    <ul class="list-group">
-      <li class="list-group-item disabled" aria-disabled="true">Transactions - Last 5 Days</li>
-      <li class="list-group-item">Starbucks<span>$5.58</span></li>
-      <li class="list-group-item">McDonalds<span>$12.15</span></li>
-      <li class="list-group-item">Walmart<span>$27.02</span></li>
-      <li class="list-group-item">Costco<span>$103.37</span></li>
-    </ul>
-  </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Example select</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example multiple select</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </form>
 
   <!-- footer -->
   <footer class="fixed-bottom">
@@ -101,7 +112,7 @@
   <script src="./scripts/firebaseAPI_TEAM8.js"></script>
   <!-- <script src="./scripts/skeleton.js"></script> -->
   <!-- <script src="./scripts/main.js"></script> -->
-  <link rel="stylesheet" href="styles/main_style.css">
+  <!-- <link rel="stylesheet" href="styles/main_style.css"> -->
 </body>
 
 </html>
