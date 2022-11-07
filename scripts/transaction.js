@@ -1,6 +1,6 @@
 function addTransaction() {
   //define a variable for the collection you want to create in Firestore to populate data
-  var hikesRef = db.collection("hikes");
+  var hikesRef = db.collection("transactions");
 
   hikesRef.add({
       code:"BBY01",
