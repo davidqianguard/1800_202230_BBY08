@@ -13,3 +13,18 @@ footer {
 div span {
   float: right;
 }
+
+div button {
+  display: block;
+  margin: 5px; 
+}
+
+.addtransaction {
+  display: block;
+  margin: 5px;
+}
+
+.list-group {
+  display: flex;
+  margin: 5px;
+}
