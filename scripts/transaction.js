@@ -1,36 +1,30 @@
 function addTransaction() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var hikesRef = db.collection("transactions");
+  console.log("in")
+  let Item = document.getElementById("item").value;
+  let Category = document.getElementById("category").value;
+  let Cost = "$" + document.getElementById("cost").value;
+  console.log(Item, Category, Cost);
 
-  hikesRef.add({
-      code:"BBY01",
-      name: "Burnaby Lake Park Trail",    //replace with your own city?
-      city: "Burnaby",
-      province: "BC",
-      level: "easy",
-      length: "10",
-      details: "Brian goes here regularly",
-      last_updated: firebase.firestore.FieldValue.serverTimestamp()  
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      var currentUser = db.collection("users").doc(user.uid)
+      var userID = user.uid;
+      //get the document for current user.
+      currentUser.get()
+        .then(userDoc => {
+          // var userEmail = userDoc.data().email;
+          db.collection("users").doc(user.uid).collection("transactions").add({
+            item: Item,
+            category: Category,
+            cost: Cost,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          }).then(() => {
+            window.location.href = "thanks.html"; //new line added
+          })
+        })
+
+    } else {
+      // No user is signed in.
+    }
   });
-  hikesRef.add({
-      code:"AM01",
-      name: "Buntzen Lake Trail Trail",    //replace with your own city?
-      city: "Anmore",
-      province: "BC",
-      level: "moderate",
-      length: "10.5",
-      details: "Brian goes here regularly",
-      last_updated: firebase.firestore.FieldValue.serverTimestamp()
- });
- hikesRef.add({
-      code:"NV01",
-      name: "Mount Seymoure Trail",    //replace with your own city?
-      city: "North Vancouver",
-      province: "BC",
-      level: "hard",
-      length: "8.2",
-      details: "Brian goes here regularly",
-      last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 10, 2022"))
- });
 }
-addTransaction();
