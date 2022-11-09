@@ -3,6 +3,7 @@ function addTransaction() {
   let Item = document.getElementById("item").value;
   let Category = document.getElementById("category").value;
   let Cost = "$" + document.getElementById("cost").value;
+  let Date = document.getElementById("date").value;
   console.log(Item, Category, Cost);
 
   firebase.auth().onAuthStateChanged(user => {
@@ -17,7 +18,7 @@ function addTransaction() {
             item: Item,
             category: Category,
             cost: Cost,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            date: Date
           }).then(() => {
             window.location.href = "thanks.html"; //new line added
           })
