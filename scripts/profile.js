@@ -18,8 +18,8 @@ function populateInfo() {
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
                     }
-                    if (userSchool != null) {
-                        document.getElementById("schoolInput").value = userEmail;
+                    if (userEmail != null) {
+                        document.getElementById("emailInput").value = userEmail;
                     }
                 })
         } else {
@@ -31,3 +31,25 @@ function populateInfo() {
 
 //call the function to run it 
 populateInfo();
+
+function editUserInfo() {
+    //Enable the form fields
+    console.log("edit button handler");
+    document.getElementById('personalInfoFields').disabled = false;
+}
+
+function saveUserInfo() {
+    console.log("inside save user info");
+
+    userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
+    userEmail = document.getElementById('emailInput').value; //get the value of the field with id="schoolInput"
+
+    currentUser.update({
+            name: userName,
+            email: userEmail
+        })
+        .then(() => {
+            console.log("Document successfully updated!");
+        })
+        document.getElementById('personalInfoFields').disabled = true;        
+}
