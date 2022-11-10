@@ -5,5 +5,5 @@ async function viewAllTransactions() {
   const collections = await sfRef.listCollections();
   collections.forEach(collection => {
     console.log('Found subcollection with id:', collection.id);
-  }); index.js
+  });
 }
