@@ -1,5 +1,5 @@
 function chart() {
-    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+    var xValues = ["Food", "Transportation", "Rent", "Auto", "Personal"];
     var yValues = [55, 49, 44, 24, 15];
     var barColors = [
       "#b91d47",
@@ -21,7 +21,7 @@ function chart() {
       options: {
         title: {
           display: true,
-          text: "Hard Coded Pie Chart"
+          text: "Pie Chart"
         }
       }
     });
