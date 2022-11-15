@@ -1,24 +1,24 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-function inputValidation() {
-  'use strict'
+// // Example starter JavaScript for disabling form submissions if there are invalid fields
+// function inputValidation() {
+//   'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//   var forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+//   // Loop over them and prevent submission
+//   Array.prototype.slice.call(forms)
+//     .forEach(function (form) {
+//       form.addEventListener('submit', function (event) {
+//         if (!form.checkValidity()) {
+//           event.preventDefault()
+//           event.stopPropagation()
+//         }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-}
-inputValidation();
+//         form.classList.add('was-validated')
+//       }, false)
+//     })
+// }
+// inputValidation();
 
 function addTransaction() {
   console.log("in")
@@ -29,7 +29,7 @@ function addTransaction() {
   console.log(Item, Category, "$" + Cost, Date);
 
   firebase.auth().onAuthStateChanged(user => {
-    if (user && Item !== "" && Cost !== "" && Date !== "") {
+    if (user) {
       var currentUser = db.collection("users").doc(user.uid)
       var userID = user.uid;
       //get the document for current user.
@@ -39,10 +39,10 @@ function addTransaction() {
           db.collection("users").doc(user.uid).collection("transactions").add({
             item: Item,
             category: Category,
-            cost: "$" + Cost,
+            cost: Cost,
             date: Date
           }).then(() => {
-            window.location.href = "thanks.html"; //new line added
+            //window.location.href = "thanks.html"; //new line added
           })
         })
 
