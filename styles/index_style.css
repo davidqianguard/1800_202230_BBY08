@@ -6,5 +6,9 @@ html, body {
 .login-button {
   display: block;
   margin: 0 auto;
-  margin-left: 150px;
+  margin-left: 110px;
+}
+
+.quote {
+  text-align: center;
 }
