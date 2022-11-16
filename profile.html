@@ -14,6 +14,7 @@
     <!------------------------------------------>
     <!-- Bootstrap Library CSS JS CDN go here -->
     <!------------------------------------------>
+    <link rel="stylesheet" href="styles/profile_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -35,6 +36,7 @@
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="text/footers.css">
 
 </head>
 
@@ -45,33 +47,44 @@
 
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
-    
+
     <!-- the body of your page goes here -->
     <div class="container">
-        <h1><span id="name-goes-here"></span>'s Profile </h1>
-        <form>
+        <br>
+        <h1><span id="name-goes-here"></span>'s Profile </h>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
+                    <br>
                     <label class="text text-dark">Name</label>
                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
                 </div>
+                <br>
                 <div class="form-group">
                     <label class="text text-dark">Email</label>
                     <input type="text" id="emailInput" class="form-control" placeholder="Enter your email">
                 </div>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-                <span style="width: 10px"></span>
-                <button type="button" class="btn btn-dark" onclick="saveUserInfo()">Save</button>
+                <button type="button" class="btn btn-light edit-button" style="background-color: #dbeffe;"
+                    onclick="editUserInfo()">Edit</button>
+                <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
+                    onclick="saveUserInfo()">Save</button>
             </div>
-        </form>
+            </form>
     </div>
 
     <!-- our own footer goes here-->
     <footer class="fixed-bottom">
-        <div class="text-center bg-dark p-3" style="color: white">
-            © 2022 Copyright: BBY08
+        <div class="text-center bg-light p-3" style="background-color: #e3f2fd;">
+            <a class="navbar-brand history-icon" href="main.html">
+                <img src="images/history.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <a class="navbar-brand" href="main.html">
+                <img src="images/main.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <a class="navbar-brand budget-icon" href="budgetbreakdown.html">
+                <img src="images/budget.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
         </div>
     </footer>
 

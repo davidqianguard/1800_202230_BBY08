@@ -33,12 +33,12 @@
   <!-------------------------------------------->
   <!-- Other libraries and styles of your own -->
   <!-------------------------------------------->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   <link rel="stylesheet" href="styles/main_style.css">
+  <link rel="stylesheet" href="text/footers.css">
 </head>
 
 <body>
@@ -49,7 +49,42 @@
   <!-- our own navbar goes here -->
 
   <!--nav bar-->
-  <nav id="navbarPlaceholder"></nav>
+  <link rel="stylesheet" href="./text/nav.css">
+  <nav class="navbar navbar-light" style="background-color: #81cafd;">
+    <div class="container-fluid boder">
+      <a class="navbar-brand main-icon" href="main.html">
+        <img src="images/acorn.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Acorn
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="mySearch">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item hover">
+            <b><a class="nav-link active" aria-current="page" href="main.html">Home</a></b>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="profile.html">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="transaction.html">Transaction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="budgetbreakdown.html">Budgetbreakdown</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"><b><i>Sign Out</i></b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- the body of your page goes here -->
   <img src="images/pie_chart.png" class="rounded mx-auto d-block">
@@ -57,51 +92,32 @@
   <div class="text-center">
     <div class="btn-group gap-5">
       <button type="button" href="#" class="btn-dark btn-sm">Compare to Avg</button>
-      <a class="btn-dark btn-sm addtransaction" href="transaction.html" role="button"><span
-          class="material-symbols-outlined">add</span>
-      </a>
-      <a class="btn btn-dark" href="viewAllTransactions.html" role="button">View All</a>
-    </div>
-  </div><br />
-
-  <div class="container">
-    <h5 class="text-center">Recent Transactions</h5>
-    <!-- Here is container for cards  -->
-    <div class="container">
-      <div id="recentTransactionGroup" class="row row-cols-auto">
-
-      </div>
+      <a class="btn-dark btn-sm addtransaction" href="transaction.html" role="button"><span class="material-symbols-outlined">add</span></a>
     </div>
   </div>
 
-  <!-- <div class="h-75 d-flex align-items-center justify-content-center">
-    <ul class="list-group CardTemplate">
-      <li class="list-group-item disabled" aria-disabled="true"><b>Recent Transactions</b></li>
-      <li class="recentItem"><span class="recentCost"></span></li>
-    </ul>
-  </div> -->
-
-  <template id="CardTemplate">
-    <table class="table table-striped d-block">
-      <!-- <thead class="thead-dark">
-        <tr>
-          <th scope="col">Item</th>
-          <th scope="col">Cost</th>
-        </tr>
-      </thead> -->
-      <tbody class="d-flex justify-content-center">
-        <tr>
-          <td class="recentItem"></td>
-          <td class="recentCost"></td>
-        </tr>
-      </tbody>
-    </table>
-  </template>
+  <div class="h-75 d-flex align-items-center justify-content-center " onclick="viewAllTransactions()">
+    <ul class="list-group \">
+      <li class="list-group-item disabled" aria-disabled="true"><b>Transactions - Last 5 Days</b></li>
+      <li class="list-group-item">Starbucks<span>$5.58</span></li>
+      <li class="list-group-item">McDonalds<span>$12.15</span></li>
+      <li class="list-group-item">Walmart<span>$27.02</span></li>
+      <li class="list-group-item">Costco<span>$103.37</span></li>
+     </ul>
+  </div>
 
   <!-- footer -->
   <footer class="fixed-bottom">
-    <div class="text-center bg-dark p-3" style="color: white">
-      © 2022 Copyright: BBY08
+    <div class="text-center bg-light p-3" style="background-color: #e3f2fd;">
+      <a class="navbar-brand history-icon" href="main.html">
+        <img src="images/history.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand" href="main.html">
+        <img src="images/main.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand budget-icon" href="budgetbreakdown.html">
+        <img src="images/budget.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
     </div>
   </footer>
 

@@ -39,6 +39,8 @@
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   <link rel="stylesheet" href="styles/main_style.css">
+  <link rel="stylesheet" href="text/footers.css">
+
 </head>
 
 <body>
@@ -75,24 +77,38 @@
         <label for="exampleFormControlSelect2">Cost</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control currency" id="cost">
-        </div>
-      </div><br />
-      <div class="form-group">
-        <label for="exampleFormControlSelect3">Date of Transaction</label>
-        <input type="date" class="form-control" id="date">
-      </div><br />
+          <input type="number" class="form-control currency" id="cost" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div><br/>
+        <div class="form-group">
+          <label for="validationCustom3">Date of Transaction</label>
+          <input type="date" class="form-control" id="date" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div><br>
+      </div>
 
       <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-lg btn-dark" onclick="addTransaction()">Submit</button>
+        <button type="submit" class="btn btn-lg btn-light" style="background-color: #9bd1f7;" onclick="addTransaction()">Submit</button>
       </div>
     <!-- </form> -->
   </div>
 
   <!-- footer -->
   <footer class="fixed-bottom">
-    <div class="text-center bg-dark p-3" style="color: white">
-      © 2022 Copyright: BBY08
+    <div class="text-center bg-light p-3" style="background-color: #e3f2fd;">
+      <a class="navbar-brand history-icon" href="main.html">
+        <img src="images/history.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand" href="main.html">
+        <img src="images/main.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand budget-icon" href="budgetbreakdown.html">
+        <img src="images/budget.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
     </div>
   </footer>
 

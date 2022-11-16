@@ -6,3 +6,8 @@
 a:hover {
     color: blue;
 }
+
+.main-icon {
+    display: block;
+    margin: 0 auto;
+}
