@@ -34,7 +34,7 @@ function addTransaction() {
   console.log(Item, Category, "$" + Cost, Date);
 
   firebase.auth().onAuthStateChanged(user => {
-    if (user && Item !== "" && Cost !== "" && Date !== "") {
+    if (user && Item !== "" && Category !== "" && Cost !== "" && Date !== "") {
       var currentUser = db.collection("users").doc(user.uid)
       var userID = user.uid;
       //get the document for current user.
