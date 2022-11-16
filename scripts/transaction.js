@@ -33,21 +33,20 @@ function addTransaction() {
   var Date = document.getElementById("date").value;
   console.log(Item, Category, "$" + Cost, Date);
   firebase.auth().onAuthStateChanged(user => {
-    if (user && Item !== "" && Cost !== "" && Date !== "") {
-      var currentUser = db.collection("users").doc(user.uid)
-      var userID = user.uid;
-      //get the document for current user.
-      currentUser.get()
-        .then(userDoc => {
-          var userEmail = userDoc.data().email;
-          db.collection("users").doc(user.uid).collection("transactions").add({
-            item: Item,
-            category: Category,
-            cost: "$" + Cost,
-            date: Date
-          }).then(() => {
-            window.location.href = "thanks.html"; //new line added
-          })
+    if (user) {
+      //alert("going to add soon");
+      //alert(user.uid);
+      db.collection("users").doc(user.uid)
+        .collection("transactions")
+        .add({
+          item: Item,
+          category: Category,
+          cost: Cost,
+          date: Date
+        }).then(() => {
+          //alert("added");
+          console.log("added new transaction!");
+          //window.location.href = "thanks.html"; //new line added
         })
     } else {
       console.log("no one logged in");
