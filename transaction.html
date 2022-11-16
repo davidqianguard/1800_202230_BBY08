@@ -51,48 +51,13 @@
   <!-- our own navbar goes here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <!-- the body of your page goes here -->
-  <!-- <div class="container">
-    <br>
-    <h1>Add a new transaction</h1>
-    <br>
-    <form>
+  <!-- form -->
+  <div class="container d-grid align-items-center justify-content-center">
+    <!-- <form> -->
       <div class="form-group">
-        <label for="exampleFormControlInput1">Transaction Name</label>
-        <input type="text" class="form-control" id="TransactionName" placeholder="Transaction Name">
-      </div><br>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Was category was the transaction?</label>
-        <select class="form-control" id="">
-          <option>Essential</option>
-          <option>Non-essential</option>
-        </select>
-        <br>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Price</label>
-          <input type="text" class="form-control" id="title" placeholder="Price">
-        </div><br>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Date of Transaction</label>
-          <input type="date" class="form-control" id="title" placeholder="Price">
-        </div><br>
-
-        <br>
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn btn-lg btn-primary pull-right" onclick="writeReview()">Submit</button>
-        </div>
-    </form>
-  </div> -->
-
-  <form class="needs-validation" novalidate>
-    <div class="d-grid align-items-center justify-content-center">
-      <div class="form-group">
-        <label for="validationCustom1" class="form-label">Item</label>
-        <input type="text" class="form-control" id="item" placeholder="Item" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div><br/>
+        <label for="exampleFormControlTextArea1">Item</label>
+        <input type="text" class="form-control" id="item" placeholder="Item">
+      </div><br />
       <div class="form-group">
         <label for="exampleFormControlSelect1">Category</label>
         <select class="form-control" id="category">
@@ -107,12 +72,12 @@
           <option>Entertainment</option>
           <option>Personal</option>
         </select>
-      </div><br/>
+      </div><br />
       <div class="form-group">
-        <label for="validationCustom2">Cost</label>
+        <label for="exampleFormControlSelect2">Cost</label>
         <div class="input-group">
-          <span class="input-group-addon"></span>
-          <input type="number" class="form-control currency" id="cost" placeholder="$" required>
+          <span class="input-group-addon">$</span>
+          <input type="number" class="form-control currency" id="cost" required>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -129,8 +94,8 @@
       <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-lg btn-light" style="background-color: #9bd1f7;" onclick="addTransaction()">Submit</button>
       </div>
-    </div>
-  </form>
+    <!-- </form> -->
+  </div>
 
   <!-- footer -->
   <footer class="fixed-bottom">
