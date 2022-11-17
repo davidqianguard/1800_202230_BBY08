@@ -15,7 +15,8 @@ function addTransaction() {
           item: Item,
           category: Category,
           cost: Cost,
-          date: Date
+          date: Date,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
           //alert("added");
           console.log("added new transaction!");
