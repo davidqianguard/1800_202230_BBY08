@@ -68,7 +68,7 @@ function recentTransactions(user) {
 
   db.collection("users").doc(user.uid).collection("transactions")
   .orderBy("date", "desc")  
-  .limit(10)
+  .limit(3)
     .get()
 
     .then(allTransactions => {

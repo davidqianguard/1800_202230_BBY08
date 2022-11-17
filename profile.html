@@ -19,7 +19,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -51,26 +51,25 @@
     <!-- the body of your page goes here -->
     <div class="container">
         <br>
-        <h1><span id="name-goes-here"></span>'s Profile </h>
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
-                <div class="form-group">
-                    <br>
-                    <label class="text text-dark">Name</label>
-                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-                </div>
+        <h1><span id="name-goes-here"></span>'s Profile </h1>
+        <fieldset class="mb-3" id="personalInfoFields" disabled>
+            <div class="form-group">
                 <br>
-                <div class="form-group">
-                    <label class="text text-dark">Email</label>
-                    <input type="text" id="emailInput" class="form-control" placeholder="Enter your email">
-                </div>
-            </fieldset>
-            <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-light edit-button" style="background-color: #dbeffe;"
-                    onclick="editUserInfo()">Edit</button>
-                <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
-                    onclick="saveUserInfo()">Save</button>
+                <label class="text text-dark">Name</label>
+                <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
             </div>
-            </form>
+            <br>
+            <div class="form-group">
+                <label class="text text-dark">Email</label>
+                <input type="text" id="emailInput" class="form-control" placeholder="Enter your email">
+            </div>
+        </fieldset>
+        <div class="d-flex justify-content-end mt-5">
+            <button type="button" class="btn btn-light edit-button" style="background-color: #dbeffe;"
+                onclick="editUserInfo()">Edit</button>
+            <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
+                onclick="saveUserInfo()">Save</button>
+        </div>
     </div>
 
     <!-- our own footer goes here-->
