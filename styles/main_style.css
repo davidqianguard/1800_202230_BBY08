@@ -28,3 +28,8 @@ div button {
   display: flex;
   margin: 5px;
 }
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: rgba(175, 228, 238, 0.55);
+ }
