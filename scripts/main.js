@@ -66,11 +66,12 @@ function recentTransactions(user) {
   let RecentTransactionTemplate = document.getElementById("RecentTransactionTemplate");
   let TransactionGroup = document.getElementById("TransactionGroup");
 
-  db.collection("users").doc(user.uid).collection("transactions").get()
+  db.collection("users").doc(user.uid).collection("transactions")
+  .orderBy("date", "desc")  
+  .limit(10)
+    .get()
 
     .then(allTransactions => {
-
-      console.log(allTransactions)
 
       allTransactions.forEach(doc => {
         var transCategory = doc.data().category;
