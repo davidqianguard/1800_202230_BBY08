@@ -6,7 +6,7 @@ function addTransaction() {
   var Date = document.getElementById("date").value;
   console.log(Item, Category, "$" + Cost, Date);
   firebase.auth().onAuthStateChanged(user => {
-    if (user) {
+    if (user && Item !== "" && Cost !== "" && Date !== "") {
       //alert("going to add soon");
       //alert(user.uid);
       db.collection("users").doc(user.uid)
@@ -15,7 +15,8 @@ function addTransaction() {
           item: Item,
           category: Category,
           cost: Cost,
-          date: Date
+          date: Date,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
           //alert("added");
           console.log("added new transaction!");
@@ -27,24 +28,3 @@ function addTransaction() {
     }
   });
 }
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()

@@ -39,7 +39,7 @@
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   <link rel="stylesheet" href="styles/main_style.css">
-  <link rel="stylesheet" href="text/footers.css">
+  <link rel="stylesheet" href="text/footer.css">
   <link rel="stylesheet" href="styles/transaction.css">
 
 </head>
@@ -53,15 +53,15 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- form -->
-  <div class="container d-grid align-items-center justify-content-center transaction">
+  <div class="container h- 75 d-grid align-items-center justify-content-center transaction">
     <!-- <form> -->
       <div class="form-group">
         <label for="exampleFormControlTextArea1">Item</label>
-        <input type="text" class="form-control" id="item" placeholder="Item">
+        <input type="text" class="form-control" id="item" placeholder="Item" required>
       </div><br />
       <div class="form-group">
         <label for="exampleFormControlSelect1">Category</label>
-        <select class="form-control" id="category">
+        <select class="form-control" id="category" required>
           <option>Food</option>
           <option>Clothing</option>
           <option>Transportation</option>
@@ -78,17 +78,11 @@
         <label for="exampleFormControlSelect2">Cost</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="number" class="form-control currency" id="cost" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+          <input type="number" class="form-control currency" id="cost" patter="^[\d]{1,}.[\d]{2}$" required>
         </div><br/>
         <div class="form-group">
-          <label for="validationCustom3">Date of Transaction</label>
+          <label for="exampleFormControlTextArea2">Date of Transaction</label>
           <input type="date" class="form-control" id="date" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
         </div><br>
       </div>
 
@@ -99,19 +93,7 @@
   </div>
 
   <!-- footer -->
-  <footer class="fixed-bottom">
-    <div class="text-center bg-light p-3" style="background-color: #e3f2fd;">
-      <a class="navbar-brand history-icon" href="main.html">
-        <img src="images/history.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      </a>
-      <a class="navbar-brand" href="main.html">
-        <img src="images/main.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      </a>
-      <a class="navbar-brand budget-icon" href="budgetbreakdown.html">
-        <img src="images/budget.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      </a>
-    </div>
-  </footer>
+  <div id="footerPlaceholder"></div>
 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
