@@ -67,8 +67,8 @@ function recentTransactions(user) {
   let TransactionGroup = document.getElementById("TransactionGroup");
 
   db.collection("users").doc(user.uid).collection("transactions")
-  .orderBy("date", "desc")  
-  .limit(3)
+    .orderBy("date", "desc")
+    .limit(3)
     .get()
 
     .then(allTransactions => {
@@ -87,4 +87,12 @@ function recentTransactions(user) {
         TransactionGroup.appendChild(tableData);
       })
     })
+}
+
+function signOut() {
+  firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
 }
