@@ -13,6 +13,8 @@ function populateInfo() {
                     //get the data fields of the user
                     var userName = userDoc.data().name;
                     var userEmail = userDoc.data().email;
+                    var userIncome = userDoc.data().income;
+                    var userSpend = userDoc.data().spend;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -20,6 +22,12 @@ function populateInfo() {
                     }
                     if (userEmail != null) {
                         document.getElementById("emailInput").value = userEmail;
+                    }
+                    if (userName != null) {
+                        document.getElementById("incomeInput").value = userIncome;
+                    }
+                    if (userEmail != null) {
+                        document.getElementById("spendInput").value = userSpend;
                     }
                 })
         } else {
@@ -43,17 +51,20 @@ function saveUserInfo() {
 
     userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
     userEmail = document.getElementById('emailInput').value; //get the value of the field with id="schoolInput"
+    userIncome = document.getElementById("incomeInput").value;
+    userSpend = document.getElementById("spendInput").value;
 
     currentUser.update({
             name: userName,
-            email: userEmail
+            email: userEmail,
+            income: userIncome,
+            spend: userSpend
         })
         .then(() => {
             console.log("Document successfully updated!");
         })
         document.getElementById('personalInfoFields').disabled = true;        
 }
-
 
 function insertName() {
     // to check if the user is logged in:

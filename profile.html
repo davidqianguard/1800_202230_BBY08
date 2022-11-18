@@ -51,25 +51,36 @@
     <!-- the body of your page goes here -->
     <div class="container">
         <br>
-        <h1><span id="name-goes-here"></span>'s Profile </h1>
-        <fieldset class="mb-3" id="personalInfoFields" disabled>
-            <div class="form-group">
+        <h1><span id="name-goes-here"></span>'s Profile </h>
+            <fieldset class="mb-3" id="personalInfoFields" disabled>
+                <div class="form-group">
+                    <br>
+                    <label class="text text-dark">Name</label>
+                    <input type="text" style="background-color: #d6eeff;" id="nameInput" class="form-control" placeholder="Enter your name">
+                </div>
                 <br>
-                <label class="text text-dark">Name</label>
-                <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                <div class="form-group">
+                    <label class="text text-dark">Email</label>
+                    <input type="text" style="background-color: #d6eeff;" id="emailInput" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <br>
+                    <label class="text text-dark">Income</label>
+                    <input type="text" style="background-color: #d6eeff;" id="incomeInput" class="form-control" placeholder="Enter your income">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="text text-dark">Monthly Spending</label>
+                    <input type="text" style="background-color: #d6eeff;" id="spendInput" class="form-control" placeholder="Enter your monthly spending">
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-light edit-button" style="background-color: #dbeffe;"
+                    onclick="editUserInfo()">Edit</button>
+                <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
+                    onclick="saveUserInfo()">Save</button>
             </div>
-            <br>
-            <div class="form-group">
-                <label class="text text-dark">Email</label>
-                <input type="text" id="emailInput" class="form-control" placeholder="Enter your email">
-            </div>
-        </fieldset>
-        <div class="d-flex justify-content-end mt-5">
-            <button type="button" class="btn btn-light edit-button" style="background-color: #dbeffe;"
-                onclick="editUserInfo()">Edit</button>
-            <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
-                onclick="saveUserInfo()">Save</button>
-        </div>
+            </form>
     </div>
 
     <!-- our own footer goes here-->
