@@ -27,7 +27,7 @@ function populateInfo() {
                         document.getElementById("incomeInput").value = userIncome;
                     }
                     if (userEmail != null) {
-                        document.getElementById("spendinput").value = userSpend;
+                        document.getElementById("spendInput").value = userSpend;
                     }
                 })
         } else {
