@@ -16,7 +16,7 @@ div span {
 
 div button {
   display: block;
-  margin: 5px; 
+  margin: 5px;
 }
 
 .addtransaction {
@@ -29,7 +29,12 @@ div button {
   margin: 5px;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: rgba(175, 228, 238, 0.55);
- }
+  background-color: rgba(175, 228, 238, 0.55);
+}
+
+.main-icon {
+  display: block;
+  margin-left: 130px;
+}
