@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>My BCIT Project</title>
-  <meta name="comp1800 template" content="My 1800 App">
+  <title>My BCIT Project BBY08</title>
+  <meta name="BBY08 template" content="BBY08 1800 App">
 
   <!------------------------>
   <!-- Required meta tags -->
@@ -34,7 +34,8 @@
   <!-- Other libraries and styles of your own -->
   <!-------------------------------------------->
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-  <link rel="stylesheet" href="./styles/loading_style.css">
+  <link rel="stylesheet" href="./styles/confirm_style.css">
+
 </head>
 
 <body>
@@ -42,37 +43,59 @@
   <!-- Your HTML Layout go here -->
   <!------------------------------>
 
-  <!-- navbar -->
-  <nav class="navbar navbar-light" style="background-color: #81cafd;">
-    <div class="container-fluid">
-      <a class="navbar-brand">
-        <img src="images/acorn.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Acorn
-      </a>
-    </div>
-  </nav>
+  <!-- our own navbar goes here -->
+  <div id="navbarPlaceholder"></div>
 
   <!-- the body of your page goes here -->
-  <div class="container">
-    <h1 id="logingreet" style="color: #b0defe;">Let's Login!</h1>
+  <div class="card text-center position-absolute top-50 start-50 translate-middle">
+    <h1 class="card-header">Confirm Transaction?</h1>
+    <div class="card-body d-flex justify-content-center">
+      <table class="text-center">
+        <tbody>
+          <tr>
+            <th>Item:</th>
+            <td id="item"></td>
+          </tr>
+          <tr>
+            <th>Category:</th>
+            <td id="category"></td>
+          </tr>
+          <tr>
+            <th>Cost:</th>
+            <td id="cost"></td>
+          </tr>
+          <tr>
+            <th>Date:</th>
+            <td id="date"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <a href="#" class="btn">Back</a>
+      <a href="#" class="btn btn-primary" onclick="addTransaction()">Submit</a>
+    </div>
   </div>
-  <div id="firebaseui-auth-container"></div>
-  <div id="loader">Loading...</div>
+
+  <!-- <div class="text-center">
+    <div>Item: <span id="item"></span></div>
+    <div>Category: <span id="category"></span></div>
+    <div>Cost: <span id="cost"></span></div>
+    <div>Date: <span id="date"></span></div>
+  </div> -->
+
+
+
 
   <!-- footer -->
-  <footer class="fixed-bottom">
-    <div class="text-center bg-light p-3" style="background-color: #81cafd;">
-      © 2022 Copyright: BBY08
-    </div>
-  </footer>
+  <div id="footerPlaceholder"></div>
 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
   <script src="./scripts/firebaseAPI_TEAM8.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/authentication.js"></script>
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/confirm.js"></script>
 
 </body>
 
