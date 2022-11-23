@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    chart();
+    chart(user);
     recentTransactions(user);
   } else {
     console.log("No user is signed in");
@@ -39,27 +39,87 @@ firebase.auth().onAuthStateChanged(user => {
 //   // })
 // }
 
-function chart() {
-  var xValues = ["Food", "Transportation", "Rent", "Auto", "Personal"];
-  var yValues = [55.99, 49.50, 44.40, 24.25, 15.15];
-  var barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797",
-    "#e8c3b9",
-    "#1e7145"
-  ];
+function chart(user) {
+  var today = new Date();
+  var currentDay = today.getDate();
+  var currentMonth = today.getMonth() + 1;
+  var currentYear = today.getFullYear();
 
-  new Chart("recentChart", {
-    type: "pie",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    }
-  });
+  var food = 0;
+  var clothing = 0;
+  var transportation = 0;
+  var rent = 0;
+  var utilities;
+  var health = 0;
+  var auto = 0;
+  var education = 0;
+  var entertainment = 0;
+  var personal = 0;
+
+  db.collection("users").doc(user.uid).collection("transactions")
+    .orderBy("date", "desc")
+    .get()
+
+    .then(allTransactions => {
+
+      allTransactions.forEach(doc => {
+        var transCategory = doc.data().category;
+        var transCost = parseFloat(doc.data().cost);
+        var transDate = doc.data().date.split("-");
+        var transItem = doc.data().item;
+
+        if (parseInt(transDate[0]) == currentYear && parseInt(transDate[1]) == currentMonth) {
+          if (transCategory === "Food") {
+            food += transCost;
+          } else if (transCategory === "Clothing") {
+            clothing += transCost;
+          } else if (transCategory === "Transportation") {
+            transportation += transCost;
+          } else if (transCategory === "Rent") {
+            rent += transCost;
+          } else if (transCategory === "Utilities") {
+            utilities += transCost;
+          } else if (transCategory === "Medical/Healthcare") {
+            health += transCost;
+          } else if (transCategory === "Auto") {
+            auto += transCost;
+          } else if (transCategory === "Education") {
+            education += transCost;
+          } else if (transCategory === "Entertainment") {
+            entertainment += transCost;
+          } else if (transCategory === "Personal") {
+            personal += transCost;
+          } else {
+            console.log("Unknown Category")
+          }
+        }
+
+
+      })
+      console.log(food);
+      var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
+      var yValues = [food, clothing, transportation, rent, utilities, health, auto, education, entertainment, personal];
+      var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#111111"
+      ];
+
+      new Chart("recentChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        }
+      });
+
+    })
 }
 
 function recentTransactions(user) {
