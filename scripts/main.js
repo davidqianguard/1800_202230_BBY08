@@ -49,7 +49,7 @@ function chart(user) {
   var clothing = 0;
   var transportation = 0;
   var rent = 0;
-  var utilities;
+  var utilities = 0;
   var health = 0;
   var auto = 0;
   var education = 0;
@@ -93,10 +93,8 @@ function chart(user) {
             console.log("Unknown Category")
           }
         }
-
-
       })
-      console.log(food);
+
       var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
       var yValues = [food, clothing, transportation, rent, utilities, health, auto, education, entertainment, personal];
       var barColors = [
@@ -105,7 +103,11 @@ function chart(user) {
         "#2b5797",
         "#e8c3b9",
         "#1e7145",
-        "#111111"
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000"
       ];
 
       new Chart("recentChart", {
