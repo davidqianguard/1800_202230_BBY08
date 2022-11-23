@@ -20,7 +20,7 @@ function addTransaction() {
         }).then(() => {
           //alert("added");
           console.log("added new transaction!");
-          window.location.href = "thanks.html"; //new line added
+          window.location.href = "thanks.html";
         })
     } else {
       console.log("no one logged in");

@@ -19,7 +19,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -35,7 +35,7 @@
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="text/footers.css">
 
 </head>
@@ -56,29 +56,33 @@
                 <div class="form-group">
                     <br>
                     <label class="text text-dark">Name</label>
-                    <input type="text" style="background-color: #d6eeff;" id="nameInput" class="form-control" placeholder="Enter your name">
+                    <input type="text" style="background-color: #d6eeff;" id="nameInput" class="form-control"
+                        placeholder="Enter your name">
                 </div>
                 <br>
                 <div class="form-group">
                     <label class="text text-dark">Email</label>
-                    <input type="text" style="background-color: #d6eeff;" id="emailInput" class="form-control" placeholder="Enter your email">
+                    <input type="text" style="background-color: #d6eeff;" id="emailInput" class="form-control"
+                        placeholder="Enter your email">
                 </div>
                 <div class="form-group">
                     <br>
                     <label class="text text-dark">Income</label>
-                    <input type="text" style="background-color: #d6eeff;" id="incomeInput" class="form-control" placeholder="Enter your income">
+                    <input type="text" style="background-color: #d6eeff;" id="incomeInput" class="form-control"
+                        placeholder="Enter your income">
                 </div>
                 <br>
                 <div class="form-group">
                     <label class="text text-dark">Monthly Spending</label>
-                    <input type="text" style="background-color: #d6eeff;" id="spendInput" class="form-control" placeholder="Enter your monthly spending">
+                    <input type="text" style="background-color: #d6eeff;" id="spendInput" class="form-control"
+                        placeholder="Enter your monthly spending">
                 </div>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
                 <button type="button" class="btn btn-light edit-button" style="background-color: #dbeffe;"
                     onclick="editUserInfo()">Edit</button>
                 <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
-                    onclick="saveUserInfo()">Save</button>
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">Save</button>
             </div>
             </form>
     </div>
@@ -97,6 +101,26 @@
             </a>
         </div>
     </footer>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <b>Are you sure to make changes?</b>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #cee9fd; color: black;margin-right: 100px;">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUserInfo()" style="color: black; background-color: #9bd1f7; margin-right: 20px;">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
