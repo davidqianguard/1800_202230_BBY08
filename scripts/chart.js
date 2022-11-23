@@ -8,36 +8,6 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-function chart() {
-  var xValues = ["Food", "Transportation", "Rent", "Auto", "Personal"];
-  var yValues = [55, 49, 44, 24, 15];
-  var barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797",
-    "#e8c3b9",
-    "#1e7145"
-  ];
-
-  new Chart("myChart", {
-    type: "pie",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: "Pie Chart"
-      }
-    }
-  });
-}
-chart()
-
 function getChartData(user) {
   let TransactionTableTemplate = document.getElementById("TransactionTableTemplate");
   let TransactionGroup = document.getElementById("TransactionGroup");
@@ -72,12 +42,16 @@ function projectionChart(user) {
   var currentDay = today.getDate();
   var currentMonth = today.getMonth() + 1;
   var currentYear = today.getFullYear();
+  var userIncome = parseInt(db.collection("users").doc(user.uid).get().income);
+
+  console.log(user.income)
+
 
   var food = 0;
   var clothing = 0;
   var transportation = 0;
   var rent = 0;
-  var utilities;
+  var utilities = 0;
   var health = 0;
   var auto = 0;
   var education = 0;
@@ -122,5 +96,56 @@ function projectionChart(user) {
           }
         }
       })
+      var foodForcast = food / currentDay * 30;
+      var clothingForcast = clothing / currentDay * 30;
+      var transportationForcast = transportation / currentDay * 30;
+      var rentForcast = rent / currentDay * 30;
+      var utilitiesForcast = utilities / currentDay * 30;
+      var healthForcast = health / currentDay * 30;
+      var autoForcast = auto / currentDay * 30;
+      var educationForcast = education / currentDay * 30;
+      var entertainmentForcast = entertainment / currentDay * 30;
+      var personalForcast = personal / currentDay * 30;
+
+      var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
+      var yValues = [foodForcast, clothingForcast, transportationForcast, rentForcast, utilitiesForcast, healthForcast, autoForcast, educationForcast, entertainmentForcast, personalForcast];
+      var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000"
+      ];
+
+
+      new Chart("myChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          responsive: true,
+          legend: {
+            display: true,
+            position: 'right',
+            labels: { boxWidth: 10, }
+          },
+          title: {
+            display: true,
+            text: "Forcasted Monthly Total",
+            fontSize: 18
+          }
+        }
+      });
+
     })
 }
