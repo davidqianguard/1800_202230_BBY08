@@ -1,9 +1,11 @@
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
-html, body {
+
+html,
+body {
   height: 100%;
 }
 
@@ -18,24 +20,38 @@ html, body {
 }
 
 #logingreet {
-    display: block;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .edit-button {
-    display: block;
-    margin: 0 auto;
-    margin-top: 50px;
-    
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+
 }
 
 .save-button {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .transaction {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  color: #000000;
+  background-color: #81cafd;
+  border-color: #81cafd;
+}
+
+.card {
+  width: 20rem;
+}
+
+.back-button {
+  border: 1px solid black;
 }
