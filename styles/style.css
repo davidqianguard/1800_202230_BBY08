@@ -1,0 +1,41 @@
+h2 {
+    text-align: center;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+html, body {
+  height: 100%;
+}
+
+.login-button {
+  display: block;
+  margin: 0 auto;
+  margin-left: 110px;
+}
+
+.quote {
+  text-align: center;
+}
+
+#logingreet {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.edit-button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+}
+
+.save-button {
+    display: block;
+    margin: 0 auto;
+}
+
+.transaction {
+    margin: 0 auto;
+}
