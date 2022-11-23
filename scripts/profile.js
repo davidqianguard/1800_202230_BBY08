@@ -14,7 +14,6 @@ function populateInfo() {
                     var userName = userDoc.data().name;
                     var userEmail = userDoc.data().email;
                     var userIncome = userDoc.data().income;
-                    var userSpend = userDoc.data().spend;
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -25,9 +24,6 @@ function populateInfo() {
                     }
                     if (userName != null) {
                         document.getElementById("incomeInput").value = userIncome;
-                    }
-                    if (userEmail != null) {
-                        document.getElementById("spendInput").value = userSpend;
                     }
                 })
         } else {
@@ -52,7 +48,6 @@ function saveUserInfo() {
     userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
     userEmail = document.getElementById('emailInput').value; //get the value of the field with id="schoolInput"
     userIncome = document.getElementById("incomeInput").value;
-    userSpend = document.getElementById("spendInput").value;
 
     currentUser.update({
             name: userName,
