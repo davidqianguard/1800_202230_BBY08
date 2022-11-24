@@ -118,6 +118,22 @@ function chart(user) {
             backgroundColor: barColors,
             data: yValues
           }]
+        },
+        options: {
+          responsive: true,
+          aspectRatio: .9,
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: { boxWidth: 10, },
+            align: 'start',
+            fontSize: 12
+          },
+          title: {
+            display: true,
+            text: "Forcasted Monthly Total",
+            fontSize: 20
+          }
         }
       });
 

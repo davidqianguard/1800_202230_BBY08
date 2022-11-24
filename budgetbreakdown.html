@@ -33,7 +33,6 @@
   <!-------------------------------------------->
   <!-- Other libraries and styles of your own -->
   <!-------------------------------------------->
-  <link rel="stylesheet" href="text/footers.css">
   <link rel="stylesheet" href="styles/style.css">
 
 
@@ -53,7 +52,6 @@
     </tr>
   </template>
 
-
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
@@ -63,7 +61,12 @@
 
   <!-- the body of your page goes here -->
 
-  <canvas id="myChart" style="width:100%;max-width:800px" class="rounded mx-auto d-block"></canvas><br>
+  <div class="container-fluid bg-dark text-light p-2">
+    <div class="container bg-dark p-1">
+        Your spending is % 3 lower this month<span id="spending-feedback"></span>
+    </div>
+</div>
+  <canvas id="myChart" class="rounded mx-auto d-block"></canvas><br>
 
   <h2>History</h2>
   <div class="table-responsive">
