@@ -21,35 +21,3 @@ function setTransactionData() {
     }
   });
 }
-
-
-
-
-
-
-//       db.collection("users").doc(user.uid)
-//         .collection("transactions")
-//         .add({
-//           item: Item,
-//           category: Category,
-//           cost: Cost,
-//           date: Date,
-//           timestamp: firebase.firestore.FieldValue.serverTimestamp()
-//         }).then(() => {
-//           //alert("added");
-//           console.log("added new transaction!");
-//           window.location.href = "confirm.html"; //new line added
-//         })
-//     } else {
-//       console.log("no one logged in");
-//       // No user is signed in.
-//     }
-//   });
-// }
-
-// function setTransactionData(item) {
-//   localStorage.setItem('Item', item);
-//   localStorage.setItem('Category', category);
-//   localStorage.setItem('Cost', cost);
-//   localStorage.setItem('Date', date);
-// }
