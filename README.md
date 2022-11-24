@@ -16,7 +16,8 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
+* Firebase
+* Google API
 	
 ## Content
 Content of the project folder:
@@ -30,9 +31,9 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
+    /acorn.jpg                # 
 ├── scripts                  # Folder for scripts
-    /blah.js                 # 
+    /aythentication.js                 # 
 ├── styles                   # Folder for styles
     /blah.css                # 
 

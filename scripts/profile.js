@@ -52,8 +52,7 @@ function saveUserInfo() {
     currentUser.update({
             name: userName,
             email: userEmail,
-            income: userIncome,
-            spend: userSpend
+            income: userIncome
         })
         .then(() => {
             console.log("Document successfully updated!");

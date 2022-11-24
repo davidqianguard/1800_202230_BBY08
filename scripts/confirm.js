@@ -26,5 +26,5 @@ function addTransaction() {
         console.log("added new transaction!");
         window.location.href = "thanks.html"; //new line added
       })
-    }
-  )}
+  })
+}

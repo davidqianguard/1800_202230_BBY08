@@ -2,41 +2,17 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     //console.log(user.uid + " is signed in");
     getChartData(user)
-    projectionChart(user)
+
+    db.collection("users").doc(user.uid).get()
+      .then(userDoc => {
+        var income = parseFloat(userDoc.data().income);
+        projectionChart(user, income)
+      })
+
   } else {
     console.log("No user is signed in");
   }
 });
-
-function chart() {
-  var xValues = ["Food", "Transportation", "Rent", "Auto", "Personal"];
-  var yValues = [55, 49, 44, 24, 15];
-  var barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797",
-    "#e8c3b9",
-    "#1e7145"
-  ];
-
-  new Chart("myChart", {
-    type: "pie",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: "Pie Chart"
-      }
-    }
-  });
-}
-chart()
 
 function getChartData(user) {
   let TransactionTableTemplate = document.getElementById("TransactionTableTemplate");
@@ -66,8 +42,7 @@ function getChartData(user) {
     })
 }
 
-function projectionChart(user) {
-
+function projectionChart(user, income) {
   var today = new Date();
   var currentDay = today.getDate();
   var currentMonth = today.getMonth() + 1;
@@ -77,7 +52,7 @@ function projectionChart(user) {
   var clothing = 0;
   var transportation = 0;
   var rent = 0;
-  var utilities;
+  var utilities = 0;
   var health = 0;
   var auto = 0;
   var education = 0;
@@ -122,5 +97,67 @@ function projectionChart(user) {
           }
         }
       })
+
+      var foodForcast = food / currentDay * 30;
+      var clothingForcast = clothing / currentDay * 30;
+      var transportationForcast = transportation / currentDay * 30;
+      var rentForcast = rent / currentDay * 30;
+      var utilitiesForcast = utilities / currentDay * 30;
+      var healthForcast = health / currentDay * 30;
+      var autoForcast = auto / currentDay * 30;
+      var educationForcast = education / currentDay * 30;
+      var entertainmentForcast = entertainment / currentDay * 30;
+      var personalForcast = personal / currentDay * 30;
+      var total = foodForcast + clothingForcast + transportationForcast + rentForcast + utilitiesForcast + healthForcast + autoForcast + educationForcast + entertainmentForcast + personalForcast;
+      var remaing = income - total;
+
+      if (remaing < 0) {
+        remaing = 0;
+      }
+
+      var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal", "Expected Savings"];
+      var yValues = [foodForcast.toFixed(2), clothingForcast.toFixed(2), transportationForcast.toFixed(2), rentForcast.toFixed(2), utilitiesForcast.toFixed(2), healthForcast.toFixed(2), autoForcast.toFixed(2), educationForcast.toFixed(2), entertainmentForcast.toFixed(2), personalForcast.toFixed(2), remaing.toFixed(2)];
+      var barColors = [
+        "#9e0142",
+        "#d53e4f",
+        "#f46d43",
+        "#fdae61",
+        "#fee08b",
+        "#e6f598",
+        "#abdda4",
+        "#66c2a5",
+        "#3288bd",
+        "#5e4fa2",
+        "#66ff33"
+      ];
+
+
+      new Chart("myChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          responsive: true,
+          aspectRatio: .9,
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: { boxWidth: 10, },
+            align: 'start',
+            fontSize: 12
+          },
+          title: {
+            display: true,
+            text: "Forcasted Monthly Total",
+            fontSize: 20
+          }
+        }
+      });
+
     })
 }
