@@ -1,4 +1,4 @@
-var currentUser         //global variable
+  var currentUser         //global variable
 
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
