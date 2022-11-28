@@ -2,7 +2,13 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     //console.log(user.uid + " is signed in");
     getChartData(user)
-    projectionChart(user)
+
+    db.collection("users").doc(user.uid).get()
+      .then(userDoc => {
+        var income = parseFloat(userDoc.data().income);
+        projectionChart(user, income)
+      })
+
   } else {
     console.log("No user is signed in");
   }
@@ -36,16 +42,11 @@ function getChartData(user) {
     })
 }
 
-function projectionChart(user) {
-
+function projectionChart(user, income) {
   var today = new Date();
   var currentDay = today.getDate();
   var currentMonth = today.getMonth() + 1;
   var currentYear = today.getFullYear();
-  var userIncome = parseInt(db.collection("users").doc(user.uid).get().income);
-
-  console.log(user.income)
-
 
   var food = 0;
   var clothing = 0;
@@ -57,6 +58,7 @@ function projectionChart(user) {
   var education = 0;
   var entertainment = 0;
   var personal = 0;
+  var previousMonth = 0;
 
   db.collection("users").doc(user.uid).collection("transactions")
     .orderBy("date", "desc")
@@ -95,7 +97,14 @@ function projectionChart(user) {
             console.log("Unknown Category")
           }
         }
+
+        if (parseInt(transDate[1]) > 1 && parseInt(transDate[0]) == currentYear && parseInt(transDate[1]) == (currentMonth - 1)
+          || parseInt(transDate[1]) == 1 && parseInt(transDate[0]) == currentYear - 1 && parseInt(transDate[1]) == 12) {
+          previousMonth += transCost;
+        }
+
       })
+
       var foodForcast = food / currentDay * 30;
       var clothingForcast = clothing / currentDay * 30;
       var transportationForcast = transportation / currentDay * 30;
@@ -106,20 +115,26 @@ function projectionChart(user) {
       var educationForcast = education / currentDay * 30;
       var entertainmentForcast = entertainment / currentDay * 30;
       var personalForcast = personal / currentDay * 30;
+      var total = foodForcast + clothingForcast + transportationForcast + rentForcast + utilitiesForcast + healthForcast + autoForcast + educationForcast + entertainmentForcast + personalForcast;
+      var remaing = income - total;
 
-      var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
-      var yValues = [foodForcast, clothingForcast, transportationForcast, rentForcast, utilitiesForcast, healthForcast, autoForcast, educationForcast, entertainmentForcast, personalForcast];
+      if (remaing < 0) {
+        remaing = 0;
+      }
+
+      var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal", "Expected Savings"];
+      var yValues = [foodForcast.toFixed(2), clothingForcast.toFixed(2), transportationForcast.toFixed(2), rentForcast.toFixed(2), utilitiesForcast.toFixed(2), healthForcast.toFixed(2), autoForcast.toFixed(2), educationForcast.toFixed(2), entertainmentForcast.toFixed(2), personalForcast.toFixed(2), remaing.toFixed(2)];
       var barColors = [
-        "#9e0142",
-        "#d53e4f",
-        "#f46d43",
-        "#fdae61",
-        "#fee08b",
-        "#e6f598",
-        "#abdda4",
-        "#66c2a5",
-        "#3288bd",
-        "#5e4fa2"
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000"
       ];
 
 
@@ -134,18 +149,32 @@ function projectionChart(user) {
         },
         options: {
           responsive: true,
+          aspectRatio: .9,
           legend: {
             display: true,
-            position: 'right',
-            labels: { boxWidth: 10, }
+            position: 'bottom',
+            labels: { boxWidth: 10, },
+            align: 'start',
+            fontSize: 12
           },
           title: {
             display: true,
             text: "Forcasted Monthly Total",
-            fontSize: 18
+            fontSize: 20
           }
         }
       });
 
+      // console.log(total);
+      // console.log(previousMonth);
+      var percent = (total / previousMonth * 100) - 100;
+      // console.log(percent);
+
+      if (percent <= 0) {
+        percent = Math.abs(percent);
+        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + " lower";
+      } else {
+        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + " higher";
+      }
     })
 }

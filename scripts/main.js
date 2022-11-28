@@ -7,38 +7,6 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-// function recentTransactions(user) {
-//   db.collection("users").doc(user.uid).collection("transactions")
-//     .orderBy("date")
-//     .limit(3)
-//     .get()
-//     .then(transactions => {
-//       // console.log(transactions);
-
-//       let CardTemplate = document.getElementById("CardTemplate");
-//       transactions.forEach(doc => {
-//         // console.log(thisTransactionID);
-//         // db.collection("transactions").where("item", "==", "snack").get().then(snap => {
-//         //   size = snap.size;
-//         //   queryData = snap.docs;
-
-//         // if (size == 1) {
-//         // var doc = queryData.data();
-//         var item = doc.data().item; //gets the name field
-//         var cost = doc.data().cost; //gets the length field
-//         let newCard = CardTemplate.content.cloneNode(true);
-//         newCard.querySelector('.recentItem').innerHTML = item;
-//         newCard.querySelector('.recentCost').innerHTML = "$" + cost;
-//         recentTransactionGroup.appendChild(newCard);
-//         // } else {
-//         //   console.log("Query has more than one data")
-//         // }
-//       })
-
-//     });
-//   // })
-// }
-
 function chart(user) {
   var today = new Date();
   var currentDay = today.getDate();
@@ -98,16 +66,16 @@ function chart(user) {
       var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
       var yValues = [food, clothing, transportation, rent, utilities, health, auto, education, entertainment, personal];
       var barColors = [
-        "#9e0142",
-        "#d53e4f",
-        "#f46d43",
-        "#fdae61",
-        "#fee08b",
-        "#e6f598",
-        "#abdda4",
-        "#66c2a5",
-        "#3288bd",
-        "#5e4fa2"
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000"
       ];
 
       new Chart("recentChart", {
@@ -118,6 +86,22 @@ function chart(user) {
             backgroundColor: barColors,
             data: yValues
           }]
+        },
+        options: {
+          responsive: true,
+          aspectRatio: .9,
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: { boxWidth: 10, },
+            align: 'start',
+            fontSize: 12
+          },
+          title: {
+            display: true,
+            text: "Forcasted Monthly Total",
+            fontSize: 20
+          }
         }
       });
 

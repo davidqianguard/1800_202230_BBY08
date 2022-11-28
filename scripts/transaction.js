@@ -16,7 +16,8 @@ function setTransactionData() {
       console.log("confirm transaction");
       window.location.href = "confirm.html";
     } else {
-      console.log("no one logged in");
+      alert("Please fill out form!");
+      // console.log("no one logged in");
       // No user is signed in.
     }
   });

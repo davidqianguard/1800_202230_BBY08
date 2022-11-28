@@ -2,127 +2,112 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+  <title>My BCIT Project</title>
+  <meta name="comp1800 template" content="My 1800 App">
 
-    <!------------------------>
-    <!-- Required meta tags -->
-    <!------------------------>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link rel="stylesheet" href="styles/profile_style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link rel="stylesheet" href="styles/profile_style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="text/footers.css">
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="text/footers.css">
 
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
+  <!-- our own navbar goes here -->
+  <nav id="navbarPlaceholder"></nav>
 
-    <!-- the body of your page goes here -->
-    <div class="container">
+  <!-- the body of your page goes here -->
+  <div class="container">
+    <br>
+    <h1><span id="name-goes-here"></span>'s Profile</h1>
+    <fieldset class="mb-3" id="personalInfoFields" disabled>
+      <div class="form-group">
         <br>
-        <h1><span id="name-goes-here"></span>'s Profile </h>
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
-                <div class="form-group">
-                    <br>
-                    <label class="text text-dark">Name</label>
-                    <input type="text" style="background-color: #d6eeff;" id="nameInput" class="form-control"
-                        placeholder="Enter your name">
-                </div>
-                <br>
-                <div class="form-group">
-                    <label class="text text-dark">Email</label>
-                    <input type="text" style="background-color: #d6eeff;" id="emailInput" class="form-control"
-                        placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <br>
-                    <label class="text text-dark">Income</label>
-                    <input type="text" style="background-color: #d6eeff;" id="incomeInput" class="form-control"
-                        placeholder="Enter your income">
-                </div>
-            </fieldset>
-            <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn edit-button back-button" onclick="editUserInfo()">Edit</button>
-                <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">Save</button>
-            </div>
-            </form>
+        <label class="text text-dark">Name</label>
+        <input type="text" style="background-color: #d6eeff;" id="nameInput" class="form-control"
+          placeholder="Enter your name">
+      </div>
+      <br>
+      <div class="form-group">
+        <label class="text text-dark">Email</label>
+        <input type="text" style="background-color: #d6eeff;" id="emailInput" class="form-control"
+          placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <br>
+        <label class="text text-dark">Income</label>
+        <input type="text" style="background-color: #d6eeff;" id="incomeInput" class="form-control"
+          placeholder="Enter your income">
+      </div>
+    </fieldset>
+    <div class="d-flex justify-content-end">
+      <button type="button" class="btn edit-button back-button" onclick="editUserInfo()">Edit</button>
+      <button type="button" class="btn btn-light edit-button" style="background-color: #9bd1f7;" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Save</button>
     </div>
+  </div>
 
-    <!-- our own footer goes here-->
-    <footer class="fixed-bottom">
-        <div class="text-center bg-light p-3" style="background-color: #e3f2fd;">
-            <a class="navbar-brand history-icon" href="main.html">
-                <img src="images/history.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            </a>
-            <a class="navbar-brand" href="main.html">
-                <img src="images/main.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            </a>
-            <a class="navbar-brand budget-icon" href="budgetbreakdown.html">
-                <img src="images/budget.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            </a>
+  <!-- our own footer goes here-->
+  <div id="footerPlaceholder"></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </footer>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <b>Are you sure to make changes?</b>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn back-button" data-bs-dismiss="modal"
-                        style="color: black;margin-right: 100px;">Cancel</button>
-                    <button type="button" class="btn btn-primary" onclick="saveUserInfo()"
-                        style="color: black; background-color: #9bd1f7; margin-right: 20px;">Save changes</button>
-                </div>
-            </div>
+        <div class="modal-body">
+          <b>Are you sure to make changes?</b>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="background-color: #cee9fd; color: black;margin-right: 100px;">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="saveUserInfo()"
+            style="color: black; background-color: #9bd1f7; margin-right: 20px;">Save changes</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="./scripts/firebaseAPI_TEAM8.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/profile.js"></script>
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="./scripts/firebaseAPI_TEAM8.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/profile.js"></script>
 
 </body>
 

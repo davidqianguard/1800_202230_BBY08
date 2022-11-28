@@ -61,55 +61,12 @@
   <!-- our own navbar goes here -->
 
   <!--nav bar-->
-  <nav class="navbar navbar-light" style="background-color: #81cafd;">
-    <div class="container-fluid boder">
-      <a class="navbar-brand main-icon main-icon" href="main.html">
-        <img src="images/acorn.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Acorn
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="mySearch">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item hover">
-            <b><a class="nav-link active" aria-current="page" href="main.html">Home</a></b>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="profile.html">Account</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="transaction.html">Transaction</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="budgetbreakdown.html">Budgetbreakdown</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html" onclick="signOut()"><b><i>Sign Out</i></b></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="navbarPlaceholder"></div>
 
   <!-- the body of your page goes here -->
-  <!-- <img src="images/pie_chart.png" class="rounded mx-auto d-block"> -->
   <br>
-  <canvas id="recentChart" style="width:100%;max-width:700px" class="rounded mx-auto d-block"></canvas>
+  <canvas id="recentChart" class="rounded mx-auto d-block"></canvas>
   <br><br>
-
-  <!-- <div class="text-center">
-    <div class="btn-group gap-5">
-      <a class="btn" href="#" role="button" style="background-color: #81cafd;">Compare to Avg</a>
-      <a class="btn btn-sm" href="transaction.html" role="button" style="background-color: #81cafd;"><span class="material-symbols-outlined">add</span></a>
-      <a class="btn" href="viewAllTransactions.html" role="button" style="background-color: #81cafd;">View All Transactions</a>
-    </div>
-  </div><br/> -->
 
   <div class="container">
     <h5 class="text-center">Recent Transactions</h5>
@@ -143,7 +100,6 @@
   <script src="./scripts/skeleton.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script src="./scripts/main.js"></script>
-  <!-- <script src="./scripts/viewAllTransactions.js"></script> -->
 
 </body>
 
