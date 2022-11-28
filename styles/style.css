@@ -42,12 +42,6 @@ body {
   margin: 0 auto;
 }
 
-canvas {
-  width:100%;
-  max-width:500px;
-  padding: 0%;
-}
-
 .btn-primary {
   color: #000000;
   background-color: #81cafd;
