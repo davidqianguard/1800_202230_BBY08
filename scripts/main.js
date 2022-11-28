@@ -66,16 +66,16 @@ function chart(user) {
       var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
       var yValues = [food.toFixed(2), clothing.toFixed(2), transportation.toFixed(2), rent.toFixed(2), utilities.toFixed(2), health.toFixed(2), auto.toFixed(2), education.toFixed(2), entertainment.toFixed(2), personal.toFixed(2)];
       var barColors = [
-        "#b91d47",
-        "#00aba9",
-        "#2b5797",
-        "#e8c3b9",
-        "#1e7145",
-        "#000000",
-        "#000000",
-        "#000000",
-        "#000000",
-        "#000000"
+        "#9e0142",
+        "#d53e4f",
+        "#f46d43",
+        "#fdae61",
+        "#fee08b",
+        "#e6f598",
+        "#abdda4",
+        "#66c2a5",
+        "#3288bd",
+        "#5e4fa2"
       ];
 
       new Chart("recentChart", {

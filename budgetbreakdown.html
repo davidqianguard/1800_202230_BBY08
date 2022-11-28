@@ -60,8 +60,13 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- the body of your page goes here -->
+  <div class="container-fluid bg-dark text-light p-2">
+    <div class="container bg-dark p-1 text-center">
+      Your spending is % <span id="spending-feedback"></span> vs last month
+    </div>
+  </div>
 
-  <canvas id="myChart" style="width:100%;max-width:800px" class="rounded mx-auto d-block"></canvas><br>
+  <canvas id="myChart" class="rounded mx-auto d-block"></canvas><br>
 
   <h2>History</h2>
   <div class="table-responsive">

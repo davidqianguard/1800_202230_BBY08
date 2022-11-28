@@ -125,16 +125,17 @@ function projectionChart(user, income) {
       var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal", "Expected Savings"];
       var yValues = [foodForcast.toFixed(2), clothingForcast.toFixed(2), transportationForcast.toFixed(2), rentForcast.toFixed(2), utilitiesForcast.toFixed(2), healthForcast.toFixed(2), autoForcast.toFixed(2), educationForcast.toFixed(2), entertainmentForcast.toFixed(2), personalForcast.toFixed(2), remaing.toFixed(2)];
       var barColors = [
-        "#b91d47",
-        "#00aba9",
-        "#2b5797",
-        "#e8c3b9",
-        "#1e7145",
-        "#000000",
-        "#000000",
-        "#000000",
-        "#000000",
-        "#000000"
+        "#9e0142",
+        "#d53e4f",
+        "#f46d43",
+        "#fdae61",
+        "#fee08b",
+        "#e6f598",
+        "#abdda4",
+        "#66c2a5",
+        "#3288bd",
+        "#5e4fa2",
+        "#66ff33"
       ];
 
 
