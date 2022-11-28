@@ -58,6 +58,7 @@ function projectionChart(user, income) {
   var education = 0;
   var entertainment = 0;
   var personal = 0;
+  var previousMonth = 0;
 
   db.collection("users").doc(user.uid).collection("transactions")
     .orderBy("date", "desc")
@@ -96,6 +97,12 @@ function projectionChart(user, income) {
             console.log("Unknown Category")
           }
         }
+
+        if (parseInt(transDate[1]) > 1 && parseInt(transDate[0]) == currentYear && parseInt(transDate[1]) == (currentMonth - 1)
+          || parseInt(transDate[1]) == 1 && parseInt(transDate[0]) == currentYear - 1 && parseInt(transDate[1]) == 12) {
+          previousMonth += transCost;
+        }
+
       })
 
       var foodForcast = food / currentDay * 30;
@@ -159,5 +166,16 @@ function projectionChart(user, income) {
         }
       });
 
+      // console.log(total);
+      // console.log(previousMonth);
+      var percent = (total / previousMonth * 100) - 100;
+      // console.log(percent);
+
+      if (percent <= 0) {
+        percent = Math.abs(percent);
+        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + " lower";
+      } else {
+        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + " higher";
+      }
     })
 }

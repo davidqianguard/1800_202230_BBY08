@@ -37,3 +37,9 @@ div button {
 #hide {
   display: none;
 }
+
+canvas {
+  width:100%;
+  max-width:500px;
+  padding: 0%;
+}
