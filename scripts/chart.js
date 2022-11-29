@@ -173,9 +173,9 @@ function projectionChart(user, income) {
 
       if (percent <= 0) {
         percent = Math.abs(percent);
-        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + " lower";
+        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + "% lower";
       } else {
-        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + " higher";
+        document.getElementById("spending-feedback").innerHTML = percent.toFixed(0) + "% higher";
       }
     })
 }

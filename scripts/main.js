@@ -99,7 +99,7 @@ function chart(user) {
           },
           title: {
             display: true,
-            text: "Current",
+            text: "Current Month",
             fontSize: 20
           }
         }
