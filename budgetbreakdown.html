@@ -60,28 +60,30 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- the body of your page goes here -->
-
   <div class="container-fluid bg-dark text-light p-2">
     <div class="container bg-dark p-1 text-center">
-        Your spending is % <span id="spending-feedback"></span> vs last month
+      Your spending is % <span id="spending-feedback"></span> vs last month
     </div>
-</div>
+  </div>
+
   <canvas id="myChart" class="rounded mx-auto d-block"></canvas><br>
 
-  <h2>History</h2>
-  <div class="table-responsive">
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Item</th>
-          <th scope="col">Category</th>
-          <th scope="col">$</th>
-        </tr>
-      </thead>
-      <tbody id="TransactionGroup">
-      </tbody>
-    </table>
+  <div class="container">
+    <h2>History</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Item</th>
+            <th scope="col">Category</th>
+            <th scope="col">$</th>
+          </tr>
+        </thead>
+        <tbody id="TransactionGroup">
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- footer -->

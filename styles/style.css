@@ -42,12 +42,6 @@ body {
   margin: 0 auto;
 }
 
-canvas {
-  width:100%;
-  max-width:500px;
-  padding: 0%;
-}
-
 .btn-primary {
   color: #000000;
   background-color: #81cafd;
@@ -60,4 +54,20 @@ canvas {
 
 .back-button {
   border: 1px solid black;
+}
+
+.list-group {
+  display: flex;
+  margin: 5px;
+}
+
+canvas {
+  width:100%;
+  max-width:500px;
+  padding: 0%;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: rgba(175, 228, 238, 0.55);
 }

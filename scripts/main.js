@@ -64,7 +64,7 @@ function chart(user) {
       })
 
       var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
-      var yValues = [food, clothing, transportation, rent, utilities, health, auto, education, entertainment, personal];
+      var yValues = [food.toFixed(2), clothing.toFixed(2), transportation.toFixed(2), rent.toFixed(2), utilities.toFixed(2), health.toFixed(2), auto.toFixed(2), education.toFixed(2), entertainment.toFixed(2), personal.toFixed(2)];
       var barColors = [
         "#9e0142",
         "#d53e4f",
@@ -75,8 +75,7 @@ function chart(user) {
         "#abdda4",
         "#66c2a5",
         "#3288bd",
-        "#5e4fa2",
-        "#66ff33"
+        "#5e4fa2"
       ];
 
       new Chart("recentChart", {
@@ -100,7 +99,7 @@ function chart(user) {
           },
           title: {
             display: true,
-            text: "Forcasted Monthly Total",
+            text: "Current",
             fontSize: 20
           }
         }
