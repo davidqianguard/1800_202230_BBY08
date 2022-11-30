@@ -142,3 +142,20 @@ function signOut() {
     // An error happened.
   });
 }
+
+function insertName() {
+  firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          console.log(user.uid);
+          console.log(user.displayName);
+          user_Name = user.displayName;
+
+          //$("#name-goes-here").text(user_Name);
+          document.getElementById("name").innerText = user_Name;
+
+      } else {
+
+      }
+  });
+}
+insertName();
