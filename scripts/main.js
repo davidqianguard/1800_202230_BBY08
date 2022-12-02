@@ -7,6 +7,7 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
+// Creates a pie chart of current month spending
 function chart(user) {
   var today = new Date();
   var currentDay = today.getDate();
@@ -84,6 +85,7 @@ function chart(user) {
     })
 }
 
+// Creates the transaction history table last 3
 function recentTransactions(user) {
   let RecentTransactionTemplate = document.getElementById("RecentTransactionTemplate");
   let TransactionGroup = document.getElementById("TransactionGroup");
