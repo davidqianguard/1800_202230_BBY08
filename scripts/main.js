@@ -65,43 +65,19 @@ function chart(user) {
 
       var xValues = ["Food", "Clothing", "Transportation", "Rent", "Utilities", "Health", "Auto", "Education", "Entertainment", "Personal"];
       var yValues = [food.toFixed(2), clothing.toFixed(2), transportation.toFixed(2), rent.toFixed(2), utilities.toFixed(2), health.toFixed(2), auto.toFixed(2), education.toFixed(2), entertainment.toFixed(2), personal.toFixed(2)];
-      var barColors = [
-        "#9e0142",
-        "#d53e4f",
-        "#f46d43",
-        "#fdae61",
-        "#fee08b",
-        "#e6f598",
-        "#abdda4",
-        "#66c2a5",
-        "#3288bd",
-        "#5e4fa2"
-      ];
+      var barColors = ["#9e0142", "#d53e4f", "#f46d43", "#fdae61", "#fee08b", "#e6f598", "#abdda4", "#66c2a5", "#3288bd", "#5e4fa2"];
 
       new Chart("recentChart", {
         type: "pie",
         data: {
           labels: xValues,
-          datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-          }]
+          datasets: [{ backgroundColor: barColors, data: yValues }]
         },
         options: {
           responsive: true,
           aspectRatio: .9,
-          legend: {
-            display: true,
-            position: 'bottom',
-            labels: { boxWidth: 10, },
-            align: 'start',
-            fontSize: 12
-          },
-          title: {
-            display: true,
-            text: "Current Month",
-            fontSize: 20
-          }
+          legend: { display: true, position: 'bottom', labels: { boxWidth: 10, }, align: 'start', fontSize: 12 },
+          title: { display: true, text: "Current Month", fontSize: 20 }
         }
       });
 
@@ -145,17 +121,17 @@ function signOut() {
 
 function insertName() {
   firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-          console.log(user.uid);
-          console.log(user.displayName);
-          user_Name = user.displayName;
+    if (user) {
+      console.log(user.uid);
+      console.log(user.displayName);
+      user_Name = user.displayName;
 
-          //$("#name-goes-here").text(user_Name);
-          document.getElementById("name").innerText = user_Name;
+      //$("#name-goes-here").text(user_Name);
+      document.getElementById("name").innerText = user_Name;
 
-      } else {
+    } else {
 
-      }
+    }
   });
 }
 insertName();
