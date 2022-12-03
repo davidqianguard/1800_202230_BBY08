@@ -5,10 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
-* Hi! My name is Jayden and I am really looking forward to be with Brian, Max, and David over this term. I am excited to create a fascinate web-based application with my team and I hope we can show our teamwork! Let's keep it up!
-* Hi my name is Brian. I'm excited about this project because this will be my first project!
-* This line is added by Max
+This browser based web application to help people manage their finances by tracking their transactions and display them in a pie chart based on category, app also estimates the expected spending for the month and savings.
 	
 ## Technologies
 Technologies used for this project:
@@ -73,7 +70,15 @@ Firebase hosting files:
 
 ```
 
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
+
+## Contact 
+* Maximillian Yong - s.yong14@my.bcit.ca
+* Brain Kwon - crazycat13245@gmail.com
+* Jayden Baek - baekjinho0522@gmail.com
+
+## Acknowledgements 
+* <a href="https://fonts.google.com/">Google Fonts</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a>
+* <a href="https://www.chartjs.org/">Chart.js</a>
+* <a href="https://firebase.google.com/">Firebase</a>
 
