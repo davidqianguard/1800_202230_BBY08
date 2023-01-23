@@ -73,7 +73,7 @@ Firebase hosting files:
 
 ## Contact 
 * Maximillian Yong - syong14@my.bcit.ca
-* Brain Kwon - crazycat13245@gmail.com
+* Brian Kwon - bkwon6@my.bcit.ca
 * Jayden Baek - baekjinho0522@gmail.com
 
 ## Acknowledgements 
